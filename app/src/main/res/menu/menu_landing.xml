@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".LandingActivity">
+    <item
+        android:id="@+id/action_bar_apps"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="30"
+        android:title="Apps"
+        android:icon="@drawable/ic_apps_white_24dp"/>
+
+</menu>

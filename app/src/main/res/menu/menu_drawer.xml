@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/primary_group" android:checkableBehavior="single" >
+        <item
+            android:icon="@drawable/ic_home_black_48dp"
+            android:id="@+id/navigation_item_social"
+            android:checked="true"
+            android:title="HRSocial"/>
+        <item
+            android:id="@+id/navigation_item_people"
+            android:icon="@drawable/ic_person_black_18dp"
+            android:title="People"/>
+        <item
+            android:id="@+id/navigation_store"
+            android:icon="@drawable/ic_store_black_48dp"
+            android:title="Store"/>
+        <item
+            android:id="@+id/navigation_item_classified"
+            android:icon="@drawable/ic_library_books_black_48dp"
+            android:title="Classified"/>
+        <item
+            android:id="@+id/navigation_item_survey"
+            android:icon="@drawable/ic_check_circle_black_48dp"
+            android:title="Survey"/>
+    </group>
+
+    <group android:id="@+id/secondary_group" android:menuCategory="secondary" android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/share_all"
+            android:icon="@drawable/ic_share_black_48dp"
+            android:title="Share to"
+            android:menuCategory="secondary"
+            />
+
+        <item
+            android:id="@+id/share_whatsapp"
+            android:icon="@drawable/whatsapp_black"
+            android:title="Share to Whatsapp"
+            android:menuCategory="secondary"
+            />
+
+    </group>
+
+</menu>

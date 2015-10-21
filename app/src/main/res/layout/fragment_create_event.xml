@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/view"
+        android:layout_gravity="fill"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:hint="Enter Event Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/create_event_title"
+            android:inputType="textCapSentences">
+            <requestFocus />
+        </EditText>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <View
+        android:id="@+id/divider_title"
+        android:layout_marginBottom="20dp"
+        android:background="@color/divider"
+        android:layout_below="@id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <ImageView
+        android:layout_marginRight="20dp"
+        android:layout_alignStart="@+id/from_date"
+        android:layout_alignLeft="@+id/from_date"
+        android:layout_below="@id/divider_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_access_time_black_24dp"
+        android:id="@+id/image_clock"
+        android:layout_marginLeft="20dp" />
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="All day"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="15sp"
+        android:id="@+id/all_day_switch"
+        android:layout_alignBottom="@id/image_clock"
+        android:layout_toRightOf="@+id/image_clock"
+        android:layout_toEndOf="@+id/image_clock"
+        android:layout_marginRight="20dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/all_day_switch"
+        android:layout_marginTop="40dp"
+        android:id="@+id/from_date"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="15sp"
+        android:text="Wed, 2 Sep 2015"
+        android:layout_marginLeft="20dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/from_date"
+        android:layout_marginTop="40dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="15sp"
+        android:id="@+id/to_date"
+        android:text="Wed, 2 Sep 2015"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+
+        android:layout_alignParentRight="true"
+        android:gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/from_date"
+        android:layout_alignBottom="@id/from_date"
+        android:layout_marginTop="50dp"
+        android:id="@+id/from_time"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="15sp"
+        android:text="15:30"
+        android:layout_marginRight="20dp" />
+    <TextView
+        android:layout_alignParentRight="true"
+        android:gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/to_date"
+        android:layout_alignBottom="@id/to_date"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="15sp"
+        android:id="@+id/to_time"
+        android:text="16:30"
+        android:layout_marginRight="20dp" />
+
+    <View
+        android:layout_marginTop="30dp"
+        android:background="@color/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignStart="@id/all_day_switch"
+        android:layout_alignLeft="@id/all_day_switch"
+        android:layout_below="@id/to_date" />
+
+
+    <org.apmem.tools.layouts.FlowLayout
+        android:clipChildren="false"
+        android:id="@+id/recipient_list"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/to_date"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="5dp">
+
+        <org.apmem.tools.layouts.FlowLayout
+
+            android:clipChildren="false"
+            android:id="@+id/recepient_list_add"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </org.apmem.tools.layouts.FlowLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/add_recipient_edittext_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <AutoCompleteTextView
+                android:textSize="15sp"
+                android:minWidth="200dp"
+                android:hint="Add person or group"
+                android:background="@android:color/transparent"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/add_recipient_edittext"
+                android:gravity="center_vertical"/>
+        </android.support.design.widget.TextInputLayout>
+
+    </org.apmem.tools.layouts.FlowLayout>
+    <View
+        android:id="@+id/divider"
+        android:layout_below="@id/recipient_list"
+        android:layout_marginTop="30dp"
+        android:background="@color/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignStart="@id/all_day_switch"
+        android:layout_alignLeft="@id/all_day_switch"
+        />
+
+    <FrameLayout
+        android:layout_below="@+id/divider"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+
+            android:layout_gravity="bottom|right"
+            android:layout_width="wrap_content"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_height="wrap_content"
+            android:id="@+id/action_send"
+            android:src="@drawable/ic_send_black_24dp"
+            android:background="@android:color/transparent"
+            />
+    </FrameLayout>
+
+
+
+
+</RelativeLayout>
+</ScrollView>

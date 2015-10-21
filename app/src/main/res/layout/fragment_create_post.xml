@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<ScrollView-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_width="match_parent"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:fillViewport="true">-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <FrameLayout android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px" >
+        <requestFocus />
+    </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_above="@+id/add_link">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <org.apmem.tools.layouts.FlowLayout
+            android:padding="5dp"
+            android:clipChildren="false"
+            android:id="@+id/recipient_list"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <org.apmem.tools.layouts.FlowLayout
+                android:clipChildren="false"
+                android:id="@+id/recepient_list_add"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </org.apmem.tools.layouts.FlowLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/add_recipient_edittext_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <AutoCompleteTextView
+                    android:textSize="15sp"
+                    android:minWidth="200dp"
+                    android:hint="Add person or group"
+                    android:background="@android:color/transparent"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/add_recipient_edittext"
+                    android:gravity="center_vertical"/>
+            </android.support.design.widget.TextInputLayout>
+
+        </org.apmem.tools.layouts.FlowLayout>
+
+        <View
+            android:layout_below="@id/recipient_list"
+            android:id="@+id/divider_title"
+            android:layout_marginBottom="0dp"
+            android:background="@color/divider"
+
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+
+        <android.support.design.widget.TextInputLayout
+
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:id="@+id/contentView"
+            android:layout_gravity="fill"
+            android:layout_below="@+id/divider_title"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+            <EditText
+                android:hint="Your content goes here"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/create_post_content"
+                android:inputType="textMultiLine">
+                <requestFocus />
+            </EditText>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <HorizontalScrollView
+
+            android:layout_below="@id/contentView"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/attachment_parent_scroll"
+          >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/attachment_parent"
+                >
+                <ImageView
+                    android:layout_margin="3dp"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/attachment" />
+                </LinearLayout>
+        </HorizontalScrollView>
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/scroll"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_image"
+        android:src="@drawable/ic_image_black_24dp"
+        android:background="@android:color/transparent"/>
+    <ImageButton
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/add_image"
+
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_link"
+        android:src="@drawable/ic_link_black_24dp"
+        android:background="@android:color/transparent"
+
+      />
+
+    <ImageButton
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/action_send"
+        android:src="@drawable/ic_send_black_24dp"
+        android:background="@android:color/transparent"
+     />
+
+
+
+
+
+</RelativeLayout>
+<!--</ScrollView>-->

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    card_view:cardCornerRadius="4dp"
+    android:layout_margin="5dp"
+
+    app:cardElevation="2dp"
+    android:gravity="top|left|start">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:minHeight="48dp"
+            android:id="@+id/group_icon"
+            android:src="@drawable/profile_picture"
+            android:minWidth="48dp"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:layout_alignTop="@id/group_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="John Doe"
+            android:id="@+id/group_name"
+            android:layout_marginBottom="5dp"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="15sp"
+            android:layout_toRightOf="@+id/group_icon"
+            android:layout_toEndOf="@+id/group_icon" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="24th August 2015"
+            android:id="@+id/send_date"
+            android:layout_below="@+id/group_name"
+            android:layout_marginBottom="2dp"
+            android:layout_toRightOf="@+id/group_icon"
+            android:layout_toEndOf="@+id/group_icon" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/group_name"
+            android:layout_toRightOf="@id/send_date"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
+        <com.ground0.likeminds.CustomViews.ExpandableTextView
+
+            app:trimLength="120"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="15sp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis, sapien eget vestibulum tempus, massa justo fermentum elit, vestibulum pharetra sem dui a diam. Cras sit amet semper sapien"
+            android:id="@+id/group_description"
+            android:layout_centerVertical="true"
+            android:layout_below="@id/send_date"
+            android:layout_alignLeft="@id/group_icon"
+            android:layout_alignStart="@id/group_icon" />
+
+        <View
+            android:id="@+id/divider_action"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/group_description"
+            android:background="@color/divider"
+            />
+
+        <LinearLayout
+            android:layout_below="@+id/divider_action"
+            android:layout_alignLeft="@+id/group_description"
+            android:layout_alignStart="@+id/group_description"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_thumb_up_black_18dp"
+                android:id="@+id/upvote"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/divider_action"
+                android:layout_alignLeft="@+id/group_description"
+                android:layout_alignStart="@+id/group_description"
+                android:textColor="@color/primary_text"
+                android:elevation="1dp" />
+
+
+
+            <Button
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_comment_black_18dp"
+                android:id="@+id/comment"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/divider_action"
+                android:layout_toRightOf="@id/upvote"
+
+                android:textColor="@color/primary_text"
+                android:elevation="1dp" />
+
+            <Button
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_share_black_18dp"
+                android:id="@+id/share"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:layout_below="@+id/divider_action"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/primary_text"
+                android:elevation="1dp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

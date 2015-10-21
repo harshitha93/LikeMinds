@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    app:cardCornerRadius="3dp"
+    android:layout_gravity="center"
+    app:elevation="2dp"   >
+
+    <RelativeLayout
+
+        android:layout_margin="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:focusable="false">
+
+        <ImageView
+            android:fitsSystemWindows="true"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="92dp"
+            android:id="@+id/group_icon"
+            android:src="@drawable/group"
+            android:minWidth="92dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true" />
+        <View
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_width="match_parent"
+            android:layout_below="@id/group_name"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="1dp"
+            android:id="@+id/profile"
+            android:background="@color/accent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Group Name"
+            android:id="@+id/group_name"
+            android:textAppearance="?android:textAppearanceLarge"
+
+            android:textSize="15sp"
+            android:layout_below="@+id/group_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+
+
+        <com.ground0.likeminds.CustomViews.ExpandableTextView
+            app:trimLength="50"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="3 heads are better than 1"
+            android:id="@+id/group_description"
+
+            android:textSize="15sp"
+            android:layout_below="@+id/profile"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp" />
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
