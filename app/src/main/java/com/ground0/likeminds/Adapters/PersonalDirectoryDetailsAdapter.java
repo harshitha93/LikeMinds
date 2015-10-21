@@ -72,7 +72,7 @@ public class PersonalDirectoryDetailsAdapter extends RecyclerView.Adapter<Person
     public int getItemViewType(int position) {
         switch (position%4)
         {
-            case 0: return VIEW_TYPE_DIVIDER;
+            case 5: return VIEW_TYPE_DIVIDER;
             default: return VIEW_TYPE_FIELD;
         }
     }

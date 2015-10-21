@@ -231,18 +231,18 @@ public class OwnProfileAsyncTask extends AsyncTask<Object, Void, Object> {
 
         if(data!=null)
         {
-            NavigationView navigationView = (NavigationView)
-                    ((AppCompatActivity)context)
-                            .findViewById(R.id.navigation_view);
-
-            if(navigationView!=null)
-            {
-//                ((TextView)navigationView
-//                        .findViewById(R.id.drawer_header_profile_name))
-
-
-                //Get the name from the server
-            }
+//            NavigationView navigationView = (NavigationView)
+//                    ((AppCompatActivity)context)
+//                            .findViewById(R.id.navigation_view);
+//
+//            if(navigationView!=null)
+//            {
+////                ((TextView)navigationView
+////                        .findViewById(R.id.drawer_header_profile_name))
+//
+//
+//                //Get the name from the server
+//            }
 
         }
 
