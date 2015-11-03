@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.v4.widget.SwipeRefreshLayout
-    android:id="@+id/frag_group_members_swipe_refresh"
-    android:layout_height="match_parent"
+<!--<android.support.v4.widget.SwipeRefreshLayout-->
+    <!--android:id="@+id/frag_group_members_swipe_refresh"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_width="match_parent"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto">-->
+<LinearLayout
+    android:orientation="vertical"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
 
         <!--<se.emilsjolander.stickylistheaders.StickyListHeadersListView-->
@@ -18,7 +20,50 @@
             <!--android:layout_height="match_parent"-->
             <!--app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="ME"
+            android:id="@+id/header_id"
+            android:textColor="@color/secondary_text"
+            android:layout_margin="10dp" />
 
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/me_item"
+            android:orientation="horizontal" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="1dp"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_gravity="center"
+                android:layout_weight="0"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:minHeight="48dp"
+                android:id="@+id/member_icon"
+                android:src="@color/primary"
+                android:minWidth="48dp"
+                android:layout_marginLeft="50dp" />
+            <TextView
+                android:layout_marginLeft="15dp"
+
+                android:text="Arjun Biju"
+                android:textColor="@color/primary_text"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:id="@+id/member_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical|center|center_horizontal" />
+
+
+        </LinearLayout>
     <android.support.v7.widget.RecyclerView
 
             android:id="@+id/listView"
@@ -27,4 +72,4 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     </LinearLayout>
-</android.support.v4.widget.SwipeRefreshLayout>
+<!--</android.support.v4.widget.SwipeRefreshLayout>-->

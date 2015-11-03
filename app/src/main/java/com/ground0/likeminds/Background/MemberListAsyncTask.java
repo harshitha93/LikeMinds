@@ -176,9 +176,9 @@ public class MemberListAsyncTask extends AsyncTask<Object, Void, Object> {
                     }
                 });
 
-                ((SwipeRefreshLayout)((AppCompatActivity)context)
-                        .findViewById(R.id.frag_group_members_swipe_refresh))
-                        .setRefreshing(false);
+//                ((SwipeRefreshLayout)((AppCompatActivity)context)
+//                        .findViewById(R.id.frag_group_members_swipe_refresh))
+//                        .setRefreshing(false);
             }
 
 
