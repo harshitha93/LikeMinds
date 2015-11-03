@@ -37,7 +37,7 @@ import java.net.URL;
 
 public class LandingActivity extends AppCompatActivity {
 
-    ActionBarDrawerToggle actionBarDrawerToggle;
+//    ActionBarDrawerToggle actionBarDrawerToggle;
     Context context;
     static PopupWindow popupWindow;
     //,popupDim;
@@ -63,95 +63,95 @@ public class LandingActivity extends AppCompatActivity {
 
         toolbar.setTitle(R.string.abc_action_bar_home_description);
 
-        final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(
-                this,
-                drawerLayout,
-                R.string.drawer_open,
-                R.string.abc_action_bar_home_description
-        );
-
-        drawerLayout.setDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
-
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+//        final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        actionBarDrawerToggle = new ActionBarDrawerToggle(
+//                this,
+//                drawerLayout,
+//                R.string.drawer_open,
+//                R.string.abc_action_bar_home_description
+//        );
+//
+//        drawerLayout.setDrawerListener(actionBarDrawerToggle);
+//        actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
 
 
-        NavigationView navigationView = (NavigationView)findViewById(R.id.navigation_view);
-        navigationView.findViewById(R.id.drawer_header).setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(), UserProfile.class);
-                        Bundle userData = new Bundle();
-                        userData.putString("user_name","Name here");
-                        userData.putString("user_image","");
-//            userData.putString("user_image","http://www.cherrywork.net/img/block1.jpg");
-                        userData.putString("user_id", ServerDetails.USER_ID);
-                        intent.putExtra("user_data", userData);
-                        intent.putExtra("username", "Name here");
-                        startActivity(intent);
-                    }
-                }
-        );
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-                Log.i("com.ground0.likeminds", "Navigation Drawer Id : " + menuItem.getItemId());
-
-                if (menuItem.isChecked()) menuItem.setChecked(false);
-                else menuItem.setChecked(true);
-
-                drawerLayout.closeDrawers();
-
-                switch (menuItem.getItemId()) {
-                    case R.id.navigation_item_social:
-
-                        //remove elevation of toolbar
-                        Resources r = getResources();
-                        float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, r.getDisplayMetrics());
-                        ((AppCompatActivity)context).getSupportActionBar().setElevation(px);
-
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction()
-                                .replace(R.id.fragment_placeholder, new LandingFragment())
-                                .addToBackStack(null)
-                                .commit();
-                        return true;
-
-                    case R.id.navigation_item_people:
-
-                        //add elevation to toolbar
-                        Resources r1 = getResources();
-                        float px1 = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, r1.getDisplayMetrics());
-                        ((AppCompatActivity)context).getSupportActionBar().setElevation(px1);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setHomeButtonEnabled(true);
 
 
-                        fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction()
-                                .replace(R.id.fragment_placeholder, new MembersFragment())
-                                .addToBackStack(null)
-                                .commit();
-                        return  true;
-
-                    case R.id.share_whatsapp:
-                        shareWhatsapp();
-                        return true;
-                    case R.id.share_all:
-                        shareWithAll();
-                        return true;
-
-                }
-                Toast.makeText(getApplicationContext(), "Feature not available in this release", Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
+//        NavigationView navigationView = (NavigationView)findViewById(R.id.navigation_view);
+//        navigationView.findViewById(R.id.drawer_header).setOnClickListener(
+//                new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        Intent intent = new Intent(getApplicationContext(), UserProfile.class);
+//                        Bundle userData = new Bundle();
+//                        userData.putString("user_name","Name here");
+//                        userData.putString("user_image","");
+////            userData.putString("user_image","http://www.cherrywork.net/img/block1.jpg");
+//                        userData.putString("user_id", ServerDetails.USER_ID);
+//                        intent.putExtra("user_data", userData);
+//                        intent.putExtra("username", "Name here");
+//                        startActivity(intent);
+//                    }
+//                }
+//        );
+//        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(MenuItem menuItem) {
+//                Log.i("com.ground0.likeminds", "Navigation Drawer Id : " + menuItem.getItemId());
+//
+//                if (menuItem.isChecked()) menuItem.setChecked(false);
+//                else menuItem.setChecked(true);
+//
+//                drawerLayout.closeDrawers();
+//
+//                switch (menuItem.getItemId()) {
+//                    case R.id.navigation_item_social:
+//
+//                        //remove elevation of toolbar
+//                        Resources r = getResources();
+//                        float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, r.getDisplayMetrics());
+//                        ((AppCompatActivity)context).getSupportActionBar().setElevation(px);
+//
+//                        FragmentManager fragmentManager = getSupportFragmentManager();
+//                        fragmentManager.beginTransaction()
+//                                .replace(R.id.fragment_placeholder, new LandingFragment())
+//                                .addToBackStack(null)
+//                                .commit();
+//                        return true;
+//
+//                    case R.id.navigation_item_people:
+//
+//                        //add elevation to toolbar
+//                        Resources r1 = getResources();
+//                        float px1 = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, r1.getDisplayMetrics());
+//                        ((AppCompatActivity)context).getSupportActionBar().setElevation(px1);
+//
+//
+//                        fragmentManager = getSupportFragmentManager();
+//                        fragmentManager.beginTransaction()
+//                                .replace(R.id.fragment_placeholder, new MembersFragment())
+//                                .addToBackStack(null)
+//                                .commit();
+//                        return  true;
+//
+//                    case R.id.share_whatsapp:
+//                        shareWhatsapp();
+//                        return true;
+//                    case R.id.share_all:
+//                        shareWithAll();
+//                        return true;
+//
+//                }
+//                Toast.makeText(getApplicationContext(), "Feature not available in this release", Toast.LENGTH_SHORT).show();
+//                return false;
+//            }
+//        });
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .add(R.id.fragment_placeholder,new LandingFragment())
+                .add(R.id.fragment_placeholder,new MembersFragment())
                 .commit();
 
 
@@ -230,165 +230,165 @@ public class LandingActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_landing, menu);
-
-//        popupWindow = new PopupWindow(this);
-//        popupDim = new PopupWindow(this);
-
-//        LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        ViewGroup viewGroup = (ViewGroup)findViewById(R.id.popup_app_drawer);
-//        View view = layoutInflater.inflate(R.layout.popup_app_drawer, viewGroup, false);
-//        View dim = layoutInflater.inflate(R.layout.content_dim, viewGroup, false);
-
-
-//        popupDim.setContentView(dim);start
-//        popupDim.setFocusable(false);
-//        popupDim.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.dim)));
-//        popupDim.setAnimationStyle(android.R.anim.fade_in);
-
-//        getWindowManager().getDefaultDisplay().getSize(screenSize);
-
-//        popupDim.setWidth(screenSize.x);
-//        popupDim.setHeight(screenSize.y);
-
-
-
-//        popupWindow.setContentView(view);
-//        popupWindow.setFocusable(true);
-//        popupWindow.setBackgroundDrawable(new BitmapDrawable());
-//        popupWindow.setHeight(WindowManager.LayoutParams.MATCH_PARENT);
-//        popupWindow.setWidth(WindowManager.LayoutParams.MATCH_PARENT);
-
-//        View apps = view.findViewById(R.id.popup_app_drawer);
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.menu_landing, menu);
 //
-//        RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) apps.getLayoutParams();
-//        lp.setMargins(0, getSupportActionBar().getHeight() + findViewById(R.id.tab_layout).getHeight(), 0, 0);
-//        apps.setLayoutParams(lp);
+////        popupWindow = new PopupWindow(this);
+////        popupDim = new PopupWindow(this);
 //
-//        apps.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Log.i(TAG,"Touch registered on the drawer.");
-//            }
-//        });
-//
-//        View container = view.findViewById(R.id.popup_app_drawer_container);
-//        container.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                popupWindow.dismiss();
-//            }
-//        });
-
-
-//        view.measure(WindowManager.LayoutParams.WRAP_CONTENT,WindowManager.LayoutParams.WRAP_CONTENT);
-//        popupMeasuredSize[0] = view.getMeasuredWidth();
-//        popupMeasuredSize[1] = view.getMeasuredHeight();
-
-//        Log.i(TAG,"Pop up measured Size : "+popupMeasuredSize[0]+" | "+popupMeasuredSize[1]);
-
-//
-//        view.findViewById(R.id.action_leave_app).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
+////        LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+////        ViewGroup viewGroup = (ViewGroup)findViewById(R.id.popup_app_drawer);
+////        View view = layoutInflater.inflate(R.layout.popup_app_drawer, viewGroup, false);
+////        View dim = layoutInflater.inflate(R.layout.content_dim, viewGroup, false);
 //
 //
-//                openApp(getApplicationContext(), "com.example.jananin.leave_time");
-//            }
-//        });
-//        view.findViewById(R.id.action_talent_app).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                openApp(getApplicationContext(), "com.example.harshitha.talentacquisition");
-//            }
-//        });
-
-
-        return true;
-    }
+////        popupDim.setContentView(dim);start
+////        popupDim.setFocusable(false);
+////        popupDim.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.dim)));
+////        popupDim.setAnimationStyle(android.R.anim.fade_in);
+//
+////        getWindowManager().getDefaultDisplay().getSize(screenSize);
+//
+////        popupDim.setWidth(screenSize.x);
+////        popupDim.setHeight(screenSize.y);
+//
+//
+//
+////        popupWindow.setContentView(view);
+////        popupWindow.setFocusable(true);
+////        popupWindow.setBackgroundDrawable(new BitmapDrawable());
+////        popupWindow.setHeight(WindowManager.LayoutParams.MATCH_PARENT);
+////        popupWindow.setWidth(WindowManager.LayoutParams.MATCH_PARENT);
+//
+////        View apps = view.findViewById(R.id.popup_app_drawer);
+////
+////        RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) apps.getLayoutParams();
+////        lp.setMargins(0, getSupportActionBar().getHeight() + findViewById(R.id.tab_layout).getHeight(), 0, 0);
+////        apps.setLayoutParams(lp);
+////
+////        apps.setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View v) {
+////                Log.i(TAG,"Touch registered on the drawer.");
+////            }
+////        });
+////
+////        View container = view.findViewById(R.id.popup_app_drawer_container);
+////        container.setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View v) {
+////                popupWindow.dismiss();
+////            }
+////        });
+//
+//
+////        view.measure(WindowManager.LayoutParams.WRAP_CONTENT,WindowManager.LayoutParams.WRAP_CONTENT);
+////        popupMeasuredSize[0] = view.getMeasuredWidth();
+////        popupMeasuredSize[1] = view.getMeasuredHeight();
+//
+////        Log.i(TAG,"Pop up measured Size : "+popupMeasuredSize[0]+" | "+popupMeasuredSize[1]);
+//
+////
+////        view.findViewById(R.id.action_leave_app).setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View v) {
+////
+////
+////                openApp(getApplicationContext(), "com.example.jananin.leave_time");
+////            }
+////        });
+////        view.findViewById(R.id.action_talent_app).setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View v) {
+////                openApp(getApplicationContext(), "com.example.harshitha.talentacquisition");
+////            }
+////        });
+//
+//
+//        return true;
+//    }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        actionBarDrawerToggle.onConfigurationChanged(newConfig);
+//        actionBarDrawerToggle.onConfigurationChanged(newConfig);
 
     }
 
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        actionBarDrawerToggle.syncState();
+//        actionBarDrawerToggle.syncState();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
-            return true;
-        }
-        //noinspection SimplifiableIfStatement
-
-        switch (id)
-        {
-            case R.id.action_bar_apps :
-
-
-                PopupMenu popupMenu = new PopupMenu(context, findViewById(id));
-                popupMenu.getMenuInflater().inflate(R.menu.menu_apps,popupMenu.getMenu());
-                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.leave:
-                                openApp(getApplicationContext(), "com.example.jananin.leave_time");
-                                return true;
-
-                            case R.id.timesheet:
-                                openApp(getApplicationContext(), "com.example.arun.timesheet" );
-                                return true;
-
-                            case R.id.talent_acq:
-                                openApp(getApplicationContext(), "com.example.harshitha.talentacquisition");
-                                return true;
-
-
-                        }
-                        return false;
-                    }
-                });
-                popupMenu.show();
-
-//                View actionMenu = findViewById(R.id.action_bar_apps);
-//                int[] location = new int[2];
-//                actionMenu.getLocationOnScreen(location);
-
-
-
-//                popupDim.showAtLocation(actionMenu.getRootView(), Gravity.NO_GRAVITY, 0, 0);
-//                popupWindow.showAtLocation(actionMenu.getRootView(), Gravity.NO_GRAVITY, location[0]-popupMeasuredSize[0], location[1]);
-
-//                getSupportActionBar().getHeight();
-//                popupWindow.showAtLocation(actionMenu.getRootView(), Gravity.NO_GRAVITY, 0,0);
-
-
-//                popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+////
+////        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
+////            return true;
+////        }
+//        //noinspection SimplifiableIfStatement
+//
+//        switch (id)
+//        {
+//            case R.id.action_bar_apps :
+//
+//
+//                PopupMenu popupMenu = new PopupMenu(context, findViewById(id));
+//                popupMenu.getMenuInflater().inflate(R.menu.menu_apps,popupMenu.getMenu());
+//                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 //                    @Override
-//                    public void onDismiss() {
-//                        popupDim.dismiss();
+//                    public boolean onMenuItemClick(MenuItem item) {
+//                        switch (item.getItemId()) {
+//                            case R.id.leave:
+//                                openApp(getApplicationContext(), "com.example.jananin.leave_time");
+//                                return true;
+//
+//                            case R.id.timesheet:
+//                                openApp(getApplicationContext(), "com.example.arun.timesheet" );
+//                                return true;
+//
+//                            case R.id.talent_acq:
+//                                openApp(getApplicationContext(), "com.example.harshitha.talentacquisition");
+//                                return true;
+//
+//
+//                        }
+//                        return false;
 //                    }
 //                });
-                break;
-        }
-
-
-        return super.onOptionsItemSelected(item);
-    }
+//                popupMenu.show();
+//
+////                View actionMenu = findViewById(R.id.action_bar_apps);
+////                int[] location = new int[2];
+////                actionMenu.getLocationOnScreen(location);
+//
+//
+//
+////                popupDim.showAtLocation(actionMenu.getRootView(), Gravity.NO_GRAVITY, 0, 0);
+////                popupWindow.showAtLocation(actionMenu.getRootView(), Gravity.NO_GRAVITY, location[0]-popupMeasuredSize[0], location[1]);
+//
+////                getSupportActionBar().getHeight();
+////                popupWindow.showAtLocation(actionMenu.getRootView(), Gravity.NO_GRAVITY, 0,0);
+//
+//
+////                popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+////                    @Override
+////                    public void onDismiss() {
+////                        popupDim.dismiss();
+////                    }
+////                });
+//                break;
+//        }
+//
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
 }

@@ -2,6 +2,7 @@ package com.ground0.likeminds.Fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,6 +20,7 @@ import com.ground0.likeminds.Data.Database.MemberListTableOpenHelper;
 import com.ground0.likeminds.Data.Member;
 import com.ground0.likeminds.R;
 import com.ground0.likeminds.ServerAddress.ServerDetails;
+import com.ground0.likeminds.UserProfile;
 import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersDecoration;
 
 import org.json.JSONException;
@@ -89,15 +91,35 @@ public class MembersFragment extends Fragment{
         rootView = inflater.inflate(R.layout.fragment_group_members, container, false);
         sendRequest();
 
-        swipeRefreshLayout = (SwipeRefreshLayout)rootView.findViewById(R.id.frag_group_members_swipe_refresh);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//        swipeRefreshLayout = (SwipeRefreshLayout)rootView.findViewById(R.id.frag_group_members_swipe_refresh);
+//        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                sendRequest();
+//            }
+//        });
+//        swipeRefreshLayout.setColorSchemeColors
+//                (R.color.primary,R.color.accent,R.color.primary_dark,R.color.accent,R.color.primary_light);
+
+
+        rootView.findViewById(R.id.me_item).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onRefresh() {
-                sendRequest();
+            public void onClick(View v) {
+
+                Intent intent = new Intent(context, UserProfile.class);
+                //Add parameters as arguments
+                Bundle userData = new Bundle();
+                userData.putString("user_name","Arjun Biju");
+                userData.putString("user_image","");
+//            userData.putString("user_image","http://www.cherrywork.net/img/block1.jpg");
+                userData.putString("user_id",ServerDetails.USER_ID);
+                intent.putExtra("user_data",userData);
+                intent.putExtra("username","Arjun Biju");
+
+                context.startActivity(intent);
+
             }
         });
-        swipeRefreshLayout.setColorSchemeColors
-                (R.color.primary,R.color.accent,R.color.primary_dark,R.color.accent,R.color.primary_light);
 
 //        Vector<String> data = new Vector<>();
 //        for(int i=0;i<10;i++)

@@ -161,7 +161,7 @@ public class MemberListAsyncTask extends AsyncTask<Object, Void, Object> {
         //argument could be null
         if(o!=null) {
 
-            NavigationView navigationView = (NavigationView)((AppCompatActivity)context).findViewById(R.id.navigation_view);
+//            NavigationView navigationView = (NavigationView)((AppCompatActivity)context).findViewById(R.id.navigation_view);
             RecyclerView recyclerView = (RecyclerView) ((AppCompatActivity) context).findViewById(R.id.listView);
             if (recyclerView!=null)
             {   recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -176,9 +176,9 @@ public class MemberListAsyncTask extends AsyncTask<Object, Void, Object> {
                     }
                 });
 
-                ((SwipeRefreshLayout)((AppCompatActivity)context)
-                        .findViewById(R.id.frag_group_members_swipe_refresh))
-                        .setRefreshing(false);
+//                ((SwipeRefreshLayout)((AppCompatActivity)context)
+//                        .findViewById(R.id.frag_group_members_swipe_refresh))
+//                        .setRefreshing(false);
             }
 
 
